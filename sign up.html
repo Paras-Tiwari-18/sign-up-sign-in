@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style2.css" />
+    <script src="https://kit.fontawesome.com/5a2cd60e82.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    
+    
+</head>
+<body>
+    <div class="container">
+        <div id="lottiefiles">
+            <dotlottie-player src="https://lottie.host/d93e55aa-0b87-4819-b243-d3fa1d5dea8b/21aWgjQ6sK.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+
+        </div>
+        <div class="form-box">
+            <h1 id="title">Sign In</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-field" id="phonefield">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="number" placeholder="+91">
+                    </div>
+                
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="Password" placeholder="Password">
+                    </div>
+                    <p>Forgot Pasword <a href="#">Click Here!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signinBtn">Sign In</button>
+                    <button type="button" id="signupBtn" class="disable">Sign Up</button>
+                </div>
+                <div id="or">
+                    <div class="hr1">
+                        <hr>
+                     </div>
+                     <div id="Or">
+                        <p>Or</p>
+                     </div>
+                     <div class="hr1">
+                        <hr>
+                     </div>
+
+                </div>
+                <div id="google">
+                    <button id="bgoogle">
+                        <i class="fa-brands fa-google"></i>
+                        <p>Signin with Google</p>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let signupBtn=document.getElementById("signupBtn");
+        let signinBtn=document.getElementById("signinBtn");
+        let namefield=document.getElementById("namefield");
+        let phonefield=document.getElementById("phonefield");
+        let title=document.getElementById("title");
+        let bgoogle=document.getElementById("bgoogle");
+        
+        
+        
+        
+signinBtn.onclick = function()
+{
+    namefield.style.opacity = "0";
+    namefield.style.height="2px";
+    title.innerHTML = "Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+    bgoogle.innerHTML = `<i class="fa-brands fa-google"></i><p>Signin with Google</p>`;
+    phonefield.style.display="none";
+   
+
+
+
+
+};
+signupBtn.onclick = function()
+{
+    namefield.style.display="block";
+    namefield.style.opacity = "1";
+    namefield.style.height = "65px";
+    namefield.style.display="flex";
+    namefield.style.alignItems="center"
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+    bgoogle.innerHTML = `<i class="fa-brands fa-google"></i><p>Signup with Google</p>`;
+    phonefield.style.display="block";
+    phonefield.style.height = "65px";
+    phonefield.style.display="flex";
+    phonefield.style.alignItems="center"
+
+    
+
+    
+    
+  
+
+
+};
+
+    </script>
+</body>
+</html>
